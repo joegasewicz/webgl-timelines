@@ -27,6 +27,9 @@ impl TimeLine {
             .map_err(|_| ())
             .unwrap();
 
+        canvas.set_width(1000);
+        canvas.set_height(600);
+
         TimeLine{
             window,
             document,
@@ -47,8 +50,8 @@ impl TimeLine {
 
     pub fn draw_line(&self, ctx: &CanvasRenderingContext2d) {
         ctx.begin_path();
-        ctx.arc(75.0, 75.0, 50.0, 0.0, f64::consts::PI * 2.0)
-            .unwrap();
+        ctx.line_to(50.0, 300.0);
+        ctx.line_to(950.0, 300.00);
         ctx.stroke();
     }
 }
