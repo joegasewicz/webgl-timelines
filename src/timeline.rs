@@ -2,7 +2,15 @@ use std::f64;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 // use js_sys::*;
-use web_sys::{CanvasRenderingContext2d, Document, Element, HtmlCanvasElement, HtmlDivElement, HtmlElement, Window};
+use web_sys::{CanvasRenderingContext2d, Document, Element, HtmlCanvasElement, HtmlDivElement, HtmlElement, ImageData, Window};
+
+enum Colors {
+    Black(String),
+    Red(String),
+    Green(String),
+    Blue(String),
+    White(String),
+}
 
 pub struct TimeLine {
     pub window: Window,
@@ -50,19 +58,31 @@ impl TimeLine {
 
     pub fn draw_timeline(&self, ctx: &CanvasRenderingContext2d) {
         ctx.begin_path();
+
+        ctx.set_stroke_style(&JsValue::from_str("#000000"));
         // Draw main timeline
         ctx.line_to(50.0, 300.0);
         ctx.line_to(950.0, 300.00);
+        ctx.close_path();
+        ctx.stroke();
         // Draw ends
         ctx.move_to(50.0, 280.00);
         ctx.line_to(50.0, 320.00);
+        ctx.close_path();
+        ctx.stroke();
         ctx.move_to(950.00, 280.00);
         ctx.line_to(950.00, 320.00);
+        ctx.close_path();
         ctx.stroke();
     }
 
     pub fn draw_activity(&self, ctx: &CanvasRenderingContext2d) {
-
+        ctx.move_to(100.0, 300.0);
+        ctx.line_to(100.00, 500.0);
+        ctx.close_path();
+        ctx.stroke();
+        // Draw icon
+        let image = ImageData::new()?;
     }
 }
 

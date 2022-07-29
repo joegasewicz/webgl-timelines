@@ -1,8 +1,10 @@
 mod timeline;
+mod activity;
 
 use wasm_bindgen::prelude::*;
 use js_sys::*;
 use crate::timeline::TimeLine;
+use crate::activity::Activity;
 
 #[wasm_bindgen]
 pub fn newTimeline(_name: &str) {
