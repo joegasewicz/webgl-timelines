@@ -27,4 +27,3 @@ features = [
     'HtmlCanvasElement',
     'CanvasRenderingContext2d',
 ]
-
