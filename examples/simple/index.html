@@ -8,10 +8,10 @@
 
 <div id="webgl-timeline"></div>
 <script type="module">
-    import init, { greet } from "../../pkg/webgl_timelines.js";
+    import init, { newTimeline } from "../../pkg/webgl_timelines.js";
     init()
       .then(() => {
-        greet("Joe");
+          newTimeline("Joe");
       });
 </script>
 </body>

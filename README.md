@@ -1,6 +1,11 @@
 # webgl-timelines
 Display timelines in the DOM
 
+### Usages
+```
+newTimeline();
+```
+
 ## Contributing
 
 #### Build Web package:
