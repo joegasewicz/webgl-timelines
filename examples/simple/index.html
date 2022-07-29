@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebGL Timelines</title>
+</head>
+<body>
+
+<script type="module">
+    import init, { greet } from "../../pkg/webgl_timelines.js";
+    init()
+      .then(() => {
+        greet("Joe");
+      });
+</script>
+</body>
+</html>
