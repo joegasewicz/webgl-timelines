@@ -20,8 +20,11 @@ features = [
     'Document',
     'Element',
     'HtmlElement',
+    'HtmlDivElement',
     'Node',
     'Window',
     'console',
+    'HtmlCanvasElement',
+    'CanvasRenderingContext2d',
 ]
 
