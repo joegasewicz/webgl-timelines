@@ -1,7 +1,8 @@
+use std::f64;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 // use js_sys::*;
-use web_sys::{Document, Element, HtmlCanvasElement, HtmlDivElement, HtmlElement, Window};
+use web_sys::{CanvasRenderingContext2d, Document, Element, HtmlCanvasElement, HtmlDivElement, HtmlElement, Window};
 
 pub struct TimeLine {
     pub window: Window,
@@ -32,5 +33,22 @@ impl TimeLine {
             element_id,
             canvas,
         }
+    }
+
+    pub fn create_ctx(&self) -> CanvasRenderingContext2d {
+        let context = self.canvas
+            .get_context("2d")
+            .unwrap()
+            .unwrap()
+            .dyn_into::<CanvasRenderingContext2d>()
+            .unwrap();
+        context
+    }
+
+    pub fn draw_line(&self, ctx: &CanvasRenderingContext2d) {
+        ctx.begin_path();
+        ctx.arc(75.0, 75.0, 50.0, 0.0, f64::consts::PI * 2.0)
+            .unwrap();
+        ctx.stroke();
     }
 }
