@@ -1,14 +1,15 @@
 # webgl-timelines
 Display timelines in the DOM
 
+## Contributing
 
-### Build Web package:
+#### Build Web package:
 ```
 wasm-pack build --target web
 ```
 
 
-### Build Npm package:
+#### Build Npm package:
 ```
 wasm-pack build --target bundler --out-dir lib
 ```
