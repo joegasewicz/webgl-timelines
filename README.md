@@ -2,6 +2,12 @@
 Display timelines in the DOM
 
 ### Usages
+Add a div to your html body with an id of `webgl-timeline`.
+```
+<div id="webgl-timeline"></div>
+```
+
+To create a new time:
 ```
 newTimeline();
 ```

@@ -48,7 +48,7 @@ impl TimeLine {
         context
     }
 
-    pub fn draw_line(&self, ctx: &CanvasRenderingContext2d) {
+    pub fn draw_timeline(&self, ctx: &CanvasRenderingContext2d) {
         ctx.begin_path();
         // Draw main timeline
         ctx.line_to(50.0, 300.0);
@@ -59,6 +59,10 @@ impl TimeLine {
         ctx.move_to(950.00, 280.00);
         ctx.line_to(950.00, 320.00);
         ctx.stroke();
+    }
+
+    pub fn draw_activity(&self, ctx: &CanvasRenderingContext2d) {
+
     }
 }
 

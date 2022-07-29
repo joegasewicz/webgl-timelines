@@ -13,6 +13,8 @@ pub fn newTimeline(_name: &str) {
     // Timeline
     let timeline =  TimeLine::new(window, document, element_id);
     let ctx = timeline.create_ctx();
-    timeline.draw_line(&ctx);
+    timeline.draw_timeline(&ctx);
+    // Draw a single activity
+    timeline.draw_activity(&ctx);
 }
 
