@@ -1,8 +1,17 @@
 use std::f64;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
-// use js_sys::*;
-use web_sys::{CanvasRenderingContext2d, Document, Element, HtmlCanvasElement, HtmlDivElement, HtmlElement, ImageData, Window};
+use web_sys::{
+    CanvasRenderingContext2d,
+    Document,
+    Element,
+    HtmlCanvasElement,
+    HtmlDivElement,
+    HtmlElement,
+    HtmlImageElement,
+    ImageData,
+    Window,
+};
 
 enum Colors {
     Black(String),
@@ -82,7 +91,11 @@ impl TimeLine {
         ctx.close_path();
         ctx.stroke();
         // Draw icon
-        let image = ImageData::new()?;
+        let icon = HtmlImageElement::new().unwrap();
+        icon.set_src("../icons/factory.png");
+        ctx.draw_image_with_html_image_element_and_dw_and_dh(&icon, 30.0, 30.0, 100.0, 100.0)
+            .unwrap();
+
     }
 }
 

@@ -27,4 +27,5 @@ features = [
     'HtmlCanvasElement',
     'CanvasRenderingContext2d',
     'ImageData',
+    'HtmlImageElement'
 ]
